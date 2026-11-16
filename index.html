@@ -2,284 +2,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Williams CHOCOLATEShop</title>
+<meta name="description" content="Williams Empire. Descubre nuestra selección de chocolates.">
 
-  <title>Williams VapeShop | Productos Variados </title>
-
-  <meta name="description" content="Williams Empire. Descubre una selección variada de sabores.">
-
-  <style>
-    :root {
-      --black: #08060d;
-      --dark: #100b19;
-      --purple: #7900ff;
-      --violet: #b44aff;
-      --white: #f7f1ff;
-      --muted: #b9adc9;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8, 6, 13, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #7900ff55;
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: white;
-      text-shadow: 0 0 12px var(--violet);
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--muted);
-      font-size: 13px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--violet);
-    }
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 90px 20px;
-      background:
-        radial-gradient(ellipse at 50% 40%,
-        #5000a744 0%, transparent 65%),
-        linear-gradient(180deg, #10091a, #08060d);
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .eyebrow {
-      color: var(--violet);
-      letter-spacing: 5px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(43px, 9vw, 90px);
-      line-height: 1.08;
-      letter-spacing: 4px;
-      text-shadow:
-        0 0 10px #a000ff,
-        0 0 35px #7900ff,
-        0 0 70px #7900ff66;
-    }
-
-    .hero h1 span {
-      color: var(--violet);
-    }
-
-    .hero p {
-      color: var(--muted);
-      margin: 25px auto 35px;
-      font-size: 17px;
-      max-width: 550px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 32px;
-      border-radius: 5px;
-      background: var(--purple);
-      border: 1px solid var(--violet);
-      color: white;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 0 15px #7900ff88;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      background: var(--violet);
-      box-shadow: 0 0 30px #a000ff;
-      transform: translateY(-3px);
-    }
-
-    section {
-      padding: 85px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 12px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .product {
-      background: var(--dark);
-      border: 1px solid #7900ff55;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-7px);
-      border-color: var(--violet);
-      box-shadow: 0 0 25px #7900ff44;
-    }
-
-    .product-photo {
-      height: 210px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 75px;
-      background:
-        radial-gradient(circle, #7900ff44, #160d24);
-    }
-
-    .product-info {
-      padding: 22px;
-    }
-
-    .product h3 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    .product p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .price {
-      display: block;
-      margin-top: 15px;
-      color: var(--violet);
-      font-size: 19px;
-      font-weight: bold;
-    }
-
-    .about {
-      background:
-        linear-gradient(120deg, #170b25, #0a0710);
-      text-align: center;
-      border-top: 1px solid #7900ff44;
-      border-bottom: 1px solid #7900ff44;
-    }
-
-    .about p {
-      max-width: 700px;
-      margin: 20px auto;
-      color: var(--muted);
-    }
-
-    .contact {
-      text-align: center;
-      background: var(--black);
-    }
-
-    .contact p {
-      color: var(--muted);
-      margin: 15px auto 30px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      background: #050409;
-      border-top: 1px solid #7900ff55;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: var(--violet);
-      letter-spacing: 2px;
-    }
-
-    @media(max-width: 650px) {
-      header {
-        flex-direction: column;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .hero {
-        min-height: 520px;
-      }
-
-      section {
-        padding: 65px 6%;
-      }
-    }
-
-    @media(prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
-</head>
-
-/* ==============================
-   COLORS
-============================== */
-
+<style>
 :root {
   --black: #08060d;
   --dark: #100b19;
@@ -289,553 +17,554 @@
   --muted: #b9adc9;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-/* ==============================
-   PRODUCT CARD
-============================== */
-
-.chocolate-card {
-  cursor: pointer;
-  display: inline-block;
-  background: var(--dark);
+body {
+  background: var(--black);
   color: var(--white);
-  padding: 15px;
-  border-radius: 12px;
-  border: 1px solid rgba(180, 74, 255, 0.4);
-  transition: 0.3s;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-.chocolate-card:hover {
-  box-shadow: 0 0 20px var(--purple);
-  transform: translateY(-5px);
+body.modal-open { overflow: hidden; }
+
+a { text-decoration: none; color: inherit; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,6,13,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #7900ff55;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.chocolate-card img {
-  width: 200px;
-  border-radius: 8px;
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0 0 12px var(--violet);
 }
 
-.chocolate-card h3 {
-  color: var(--white);
+nav { display: flex; gap: 25px; flex-wrap: wrap; }
+
+nav a {
+  color: var(--muted);
+  font-size: 13px;
+  transition: .3s;
 }
 
-.chocolate-card p {
-  color: var(--violet);
-}
+nav a:hover { color: var(--violet); }
 
-
-/* ==============================
-   DARK OVERLAY
-============================== */
-
-.product-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-
-  background: rgba(8, 6, 13, 0.78);
-  backdrop-filter: blur(5px);
-
-  z-index: 9999;
-
+.hero {
+  min-height: 650px;
+  display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    radial-gradient(ellipse at 50% 40%, #5000a744 0%, transparent 65%),
+    linear-gradient(180deg, #10091a, #08060d);
+}
 
+.hero-content { max-width: 850px; }
+
+.eyebrow {
+  color: var(--violet);
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(43px, 9vw, 90px);
+  line-height: 1.08;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #a000ff, 0 0 35px #7900ff;
+}
+
+.hero h1 span { color: var(--violet); }
+
+.hero p {
+  color: var(--muted);
+  margin: 25px auto 35px;
+  font-size: 17px;
+  max-width: 550px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 5px;
+  background: var(--purple);
+  border: 1px solid var(--violet);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px #7900ff88;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--violet);
+  box-shadow: 0 0 30px #a000ff;
+  transform: translateY(-3px);
+}
+
+section { padding: 85px 8%; }
+
+.section-title {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product {
+  background: var(--dark);
+  border: 1px solid #7900ff55;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.product:hover {
+  transform: translateY(-7px);
+  border-color: var(--violet);
+  box-shadow: 0 0 25px #7900ff44;
+}
+
+.product-photo {
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+  background: radial-gradient(circle, #7900ff44, #160d24);
+}
+
+.product-info { padding: 22px; }
+
+.product h3 { font-size: 19px; margin-bottom: 8px; }
+
+.product p { color: var(--muted); font-size: 14px; }
+
+.price {
+  display: block;
+  margin-top: 15px;
+  color: var(--violet);
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.product-hint {
+  display: block;
+  color: #a99bb8;
+  font-size: 11px;
+  margin-top: 12px;
+  opacity: .7;
+}
+
+/* POP-UP */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,.82);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 
+.modal.active { display: flex; }
 
-/* ==============================
-   SMALL NEON POPUP
-============================== */
-
-.product-popup {
-  background: var(--dark);
-
-  width: 90%;
-  max-width: 650px;
-
-  min-height: 260px;
-  max-height: 80vh;
-
-  display: flex;
+.modal-box {
   position: relative;
-
-  overflow: hidden;
-
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 25px;
+  padding: 28px;
   border-radius: 14px;
-
   border: 1px solid var(--violet);
-
-  box-shadow:
-    0 0 10px var(--purple),
-    0 0 25px rgba(121, 0, 255, 0.5),
-    0 0 45px rgba(180, 74, 255, 0.2);
-
-  animation: neonAppear 0.3s ease;
+  background: linear-gradient(135deg, #190d29, #0b0811);
+  box-shadow: 0 0 35px #7900ff66;
+  animation: popup .25s ease;
 }
 
-
-/* ==============================
-   POPUP ANIMATION
-============================== */
-
-@keyframes neonAppear {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes popup {
+  from { opacity: 0; transform: scale(.92); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-
-/* ==============================
-   PRODUCT IMAGE
-============================== */
-
-.popup-image {
-  width: 42%;
-  background: var(--black);
+.modal-image {
+  min-height: 260px;
+  border-radius: 10px;
+  background: radial-gradient(circle, #7900ff55, #160d24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  overflow: hidden;
 }
 
-.popup-image img {
+.modal-image img {
   width: 100%;
   height: 100%;
   min-height: 260px;
   object-fit: cover;
 }
 
-
-/* ==============================
-   PRODUCT INFORMATION
-============================== */
-
-.popup-details {
-  width: 58%;
-
-  padding: 30px;
-
+.modal-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.country {
+.modal-details h2 {
   color: var(--violet);
-
-  font-size: 11px;
-  letter-spacing: 2px;
-
-  text-shadow: 0 0 10px var(--violet);
+  font-size: 26px;
+  margin-bottom: 12px;
 }
 
-.popup-details h2 {
-  color: var(--white);
-
-  font-size: 25px;
-
-  margin: 15px 0 8px;
-
-  text-shadow: 0 0 12px rgba(180, 74, 255, 0.5);
-}
-
-.popup-details h3 {
-  color: var(--violet);
-
-  font-size: 21px;
-
-  text-shadow: 0 0 10px var(--purple);
-}
-
-.popup-details p {
+.modal-details p {
   color: var(--muted);
-
   font-size: 14px;
-  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
-
-/* ==============================
-   CLOSE BUTTON
-============================== */
-
-.popup-close {
-  position: absolute;
-
-  top: 8px;
-  right: 13px;
-
-  z-index: 2;
-
-  border: none;
-  background: transparent;
-
-  font-size: 30px;
-
-  color: var(--white);
-
-  cursor: pointer;
-
-  text-shadow: 0 0 10px var(--violet);
-
-  transition: 0.3s;
+.modal-price {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  margin: 12px 0 20px;
 }
-
-.popup-close:hover {
-  color: var(--violet);
-
-  transform: rotate(90deg);
-
-  text-shadow: 0 0 20px var(--violet);
-}
-
-
-/* ==============================
-   NEON BUTTON
-============================== */
 
 .buy-button {
+  text-align: center;
+  display: block;
+  padding: 13px;
+  border-radius: 6px;
   background: var(--purple);
-
-  color: var(--white);
-
   border: 1px solid var(--violet);
-
-  padding: 12px;
-
-  border-radius: 7px;
-
-  margin-top: 15px;
-
-  cursor: pointer;
-
-  box-shadow: 0 0 10px var(--purple);
-
-  transition: 0.3s;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 15px #7900ff77;
+  transition: .3s;
 }
 
 .buy-button:hover {
   background: var(--violet);
-
-  box-shadow:
-    0 0 12px var(--violet),
-    0 0 25px var(--violet);
+  box-shadow: 0 0 25px #7900ff;
 }
 
+.gmail-hint {
+  font-size: 11px;
+  color: #a99bb8;
+  opacity: .65;
+  text-align: center;
+  margin-top: 12px;
+}
 
-/* ==============================
-   MOBILE VERSION
-============================== */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+}
 
-@media (max-width: 600px) {
+.about {
+  background: linear-gradient(120deg, #170b25, #0a0710);
+  text-align: center;
+  border-top: 1px solid #7900ff44;
+  border-bottom: 1px solid #7900ff44;
+}
 
-  .product-popup {
-    flex-direction: column;
+.about p {
+  max-width: 700px;
+  margin: 20px auto;
+  color: var(--muted);
+}
 
-    max-height: 85vh;
+.contact {
+  text-align: center;
+  background: var(--black);
+}
 
+.contact p {
+  color: var(--muted);
+  margin: 15px auto 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  background: #050409;
+  border-top: 1px solid #7900ff55;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer strong {
+  color: var(--violet);
+  letter-spacing: 2px;
+}
+
+@media(max-width:650px) {
+  header { flex-direction: column; }
+  nav { justify-content: center; gap: 15px; }
+  .hero { min-height: 520px; }
+  section { padding: 65px 6%; }
+
+  .modal-box {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    max-height: 90vh;
     overflow-y: auto;
-  }
-
-  .popup-image {
-    width: 100%;
-  }
-
-  .popup-image img {
-    height: 180px;
-    min-height: 180px;
-  }
-
-  .popup-details {
-    width: 100%;
     padding: 22px;
   }
 
-  .popup-details h2 {
-    font-size: 21px;
-  }
-
+  .modal-image, .modal-image img { min-height: 170px; }
+  .modal-image { font-size: 60px; }
 }
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style>
+</head>
 
 <body>
 
-<!-- CHOCOLATE PRODUCT CARD -->
-<div class="chocolate-card"
-  onclick="openProduct(
-    'German Dark Chocolate',
-    '12,00€',
-    'images/chocolate.jpg',
-    'Vape sabor tu raza.'
-  )">
+<header>
+  <a href="#inicio" class="logo">WILLIAMS CHOCOLATEShop</a>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
 
-  <img src="images/chocolate.jpg" alt="German Chocolate">
+<main>
 
-  <h3>Vape</h3>
-  <p>12.,00€</p>
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="eyebrow">THE SWEET EXPERIENCE</div>
+    <h1>WILLIAMS<br><span>CHOCOLATEShop</span></h1>
+    <p>Bienvenido a nuestra tienda de sabores.</p>
+    <a href="#catalogo" class="button">DESCUBRIR CATÁLOGO</a>
+  </div>
+</section>
 
-  <span>View product</span>
-</div>
+<section id="catalogo">
+  <h2 class="section-title">NUESTRO CATÁLOGO</h2>
+  <p class="section-description">Descubre nuestros productos</p>
 
+  <div class="products">
 
-<!-- PRODUCT POPUP OVERLAY -->
-<div class="product-overlay" id="productOverlay">
+    <article class="product" data-name="CHOCOLATE 1" data-price="12,00€" data-description="Información del primer chocolate. Añade aquí los detalles del producto." data-image="🍫">
+      <div class="product-photo">🍫</div>
+      <div class="product-info">
+        <h3>CHOCOLATE 1</h3>
+        <p>Descubre nuestro primer chocolate.</p>
+        <span class="price">12,00€</span>
+        <span class="product-hint">Pulsa para más información</span>
+      </div>
+    </article>
 
-  <div class="product-popup">
+    <article class="product" data-name="CHOCOLATE 2" data-price="12,00€" data-description="Información del segundo chocolate. Añade aquí los detalles del producto." data-image="🍫">
+      <div class="product-photo">🍫</div>
+      <div class="product-info">
+        <h3>CHOCOLATE 2</h3>
+        <p>Descubre nuestro segundo chocolate.</p>
+        <span class="price">12,00€</span>
+        <span class="product-hint">Pulsa para más información</span>
+      </div>
+    </article>
 
-    <!-- CLOSE BUTTON -->
-    <button class="popup-close" onclick="closeProduct()">×</button>
+    <article class="product" data-name="CHOCOLATE 3" data-price="12,00€" data-description="Información del tercer chocolate. Añade aquí los detalles del producto." data-image="🍫">
+      <div class="product-photo">🍫</div>
+      <div class="product-info">
+        <h3>CHOCOLATE 3</h3>
+        <p>Descubre nuestro tercer chocolate.</p>
+        <span class="price">12,00€</span>
+        <span class="product-hint">Pulsa para más información</span>
+      </div>
+    </article>
 
-    <!-- PRODUCT IMAGE -->
-    <div class="popup-image">
-      <img id="popupImage" src="" alt="Chocolate">
-    </div>
-
-    <!-- PRODUCT INFORMATION -->
-    <div class="popup-details">
-
-      <span class="country">🇩🇪 MADE IN GERMANY</span>
-
-      <h2 id="popupName"></h2>
-
-      <h3 id="popupPrice"></h3>
-
-      <p id="popupDescription"></p>
-
-      <button class="buy-button">
-        DISCOVER MORE
-      </button>
-
-    </div>
+    <article class="product" data-name="CHOCOLATE 4" data-price="12,00€" data-description="Información del cuarto chocolate. Añade aquí los detalles del producto." data-image="🍫">
+      <div class="product-photo">🍫</div>
+      <div class="product-info">
+        <h3>CHOCOLATE 4</h3>
+        <p>Descubre nuestro cuarto chocolate.</p>
+        <span class="price">12,00€</span>
+        <span class="product-hint">Pulsa para más información</span>
+      </div>
+    </article>
 
   </div>
+</section>
 
-</div>
+<section class="about" id="nosotros">
+  <h2 class="section-title">MÁS QUE SABORES</h2>
+  <p>Venta de SWEET por los Valles, desde Benavites hasta Benifairó y Faura.</p>
+  <p>Bienvenido a nuestra tienda de sabores.</p>
+</section>
 
-  <!-- NAVEGACIÓN -->
+<section class="contact" id="contacto">
+  <h2 class="section-title">CONTACTO</h2>
+  <p>¿Quieres consultar nuestros productos? Ponte en contacto con nosotros.</p>
+  <a href="https://www.instagram.com/Williamduch20/" target="_blank" rel="noopener" class="button">
+    CONSULTAR DISPONIBILIDAD
+  </a>
+</section>
 
-  <header>
-    <a href="#inicio" class="logo">
-      WILLIAMS VapeShop
-    </a>
+</main>
 
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+<footer>
+  <strong>WILLIAMS SWEETShop</strong>
+  <p>El placer de lo extraordinario.</p>
+  <p>© 2026 Williams Empire</p>
+</footer>
 
-  <main>
+<!-- VENTANA DEL PRODUCTO -->
 
-    <!-- PORTADA -->
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal-box">
+    <button class="close-modal" id="closeModal" aria-label="Cerrar">&times;</button>
 
-    <section class="hero" id="inicio">
-      <div class="hero-content">
+    <div class="modal-image" id="modalImage">🍫</div>
 
-        <div class="eyebrow">
-          THE SWEET EXPERIENCE
-        </div>
+    <div class="modal-details">
+      <h2 id="modalName">CHOCOLATE</h2>
+      <p id="modalDescription"></p>
+      <div class="modal-price" id="modalPrice"></div>
 
-        <h1>
-          WILLIAMS<br>
-          <span>VapeShop</span>
-        </h1>
-
-        <p>
-         
-        </p>
-
-        <a href="#catalogo" class="button">
-          DESCUBRIR CATÁLOGO
-        </a>
-
-      </div>
-    </section>
-
-    <!-- PRODUCTOS -->
-
-    <section id="catalogo">
-
-      <h2 class="section-title">
-        NUESTRO CATÁLOGO
-      </h2>
-
-      <p class="section-description">
-        No Hay Nada Disponible
-      </p>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-photo">Vape 1</div>
-          <div class="product-info">
-            <h3>Vape 1</h3>
-            <p>
-             No Disponible
-            </p>
-            <span class="price">
-              12,00€
-            </span>
-          </div>
-        </article>
-
-        <article class="product">
-          <div class="product-photo">Vape 2</div>
-          <div class="product-info">
-            <h3>Vape 2</h3>
-            <p>
-              No Disponible
-            </p>
-            <span class="price">
-              12,00€
-            </span>
-          </div>
-        </article>
-
-        <article class="product">
-          <div class="product-photo">Vape 3</div>
-          <div class="product-info">
-            <h3>Vape 3</h3>
-            <p>
-              No Disponible
-            </p>
-            <span class="price">
-              12,00€
-            </span>
-          </div>
-        </article>
-
-        <article class="product">
-          <div class="product-photo">Vape 4</div>
-          <div class="product-info">
-            <h3>Vape 4 </h3>        
-            <p>
-              No Disponible
-              
-            </p>
-            <span class="price">
-              12,00€
-            </span>
-          </div>
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- SOBRE NOSOTROS -->
-
-    <section class="about" id="nosotros">
-
-      <h2 class="section-title">
-        MÁS QUE SABORES
-      </h2>
-
-      <p>
-        Venta de Vaper por los Valles, Desde Benavites hasta Benifairo y Faura
-      </p>
-
-      <p>
-        Bienvenido a nuestra tienda de sabores.
-      </p>
-
-    </section>
-
-    <!-- CONTACTO -->
-
-    <section class="contact" id="contacto">
-
-      <h2 class="section-title">
-       
-      </h2>
-
-      <p>
-        ¿Quieres consultar nuestros productos?
-        Ponte en contacto con nosotros.
-      </p>
-
-      <a
-        href=https://www.instagram.com/Williamduch20/"
-        class="button">
-        CONSULTAR DISPONIBILIDAD
+      <a href="#" class="buy-button" id="buyButton">
+        BUY NOW
       </a>
 
-    </section>
+      <p class="gmail-hint">
+        (Se abrirá Gmail con un mensaje preparado para consultar tu pedido.)
+      </p>
+    </div>
+  </div>
+</div>
 
-  </main>
+<script>
+// CONFIGURACIÓN: escribe aquí el correo que recibirá los pedidos.
+const SHOP_EMAIL = "TU_CORREO@gmail.com";
 
-  <!-- PIE DE PÁGINA -->
+const modal = document.getElementById("productModal");
+const closeModal = document.getElementById("closeModal");
 
-  <footer>
-    <strong>WILLIAMS VapeShop</strong>
-    <p>El placer de lo extraordinario.</p>
-    <p>© 2026 Williams Empire</p>
-  </footer>
+const modalName = document.getElementById("modalName");
+const modalDescription = document.getElementById("modalDescription");
+const modalPrice = document.getElementById("modalPrice");
+const modalImage = document.getElementById("modalImage");
+const buyButton = document.getElementById("buyButton");
+
+let previousFocus = null;
+
+// Abrir la ventana al pulsar un producto
+document.querySelectorAll(".product").forEach(product => {
+  product.addEventListener("click", () => {
+    previousFocus = document.activeElement;
+
+    const name = product.dataset.name;
+    const price = product.dataset.price;
+    const description = product.dataset.description;
+    const image = product.dataset.image;
+
+    modalName.textContent = name;
+    modalDescription.textContent = description;
+    modalPrice.textContent = price;
+    modalImage.textContent = image;
+
+    const subject = "Consulta sobre " + name;
+    const body =
+      "Hola, me gustaría consultar sobre este producto:\n\n" +
+      "Producto: " + name + "\n" +
+      "Precio: " + price + "\n\n" +
+      "Mi consulta: ";
+
+    const gmailURL =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=" + encodeURIComponent(SHOP_EMAIL) +
+      "&su=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    buyButton.href = gmailURL;
+    buyButton.target = "_blank";
+    buyButton.rel = "noopener noreferrer";
+
+    modal.classList.add("active");
+    document.body.classList.add("modal-open");
+    closeModal.focus();
+  });
+});
+
+// Cerrar ventana
+function hideModal() {
+  modal.classList.remove("active");
+  document.body.classList.remove("modal-open");
+
+  if (previousFocus) previousFocus.focus();
+}
+
+closeModal.addEventListener("click", hideModal);
+
+// Cerrar pulsando fuera del rectángulo
+modal.addEventListener("click", event => {
+  if (event.target === modal) hideModal();
+});
+
+// Cerrar con Escape
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && modal.classList.contains("active")) {
+    hideModal();
+  }
+});
+</script>
 
 </body>
 </html>
-
-
-/* ==============================
-   OPEN PRODUCT POPUP
-============================== */
-
-function openProduct(name, price, image, description) {
-
-  document.getElementById("popupName").textContent = name;
-
-  document.getElementById("popupPrice").textContent = price;
-
-  document.getElementById("popupImage").src = image;
-
-  document.getElementById("popupDescription").textContent = description;
-
-  document.getElementById("productOverlay").style.display = "flex";
-
-  document.body.style.overflow = "hidden";
-
-}
-
-
-/* ==============================
-   CLOSE PRODUCT POPUP
-============================== */
-
-function closeProduct() {
-
-  document.getElementById("productOverlay").style.display = "none";
-
-  document.body.style.overflow = "";
-
-}
-
-
-/* ==============================
-   CLICK OUTSIDE TO CLOSE
-============================== */
-
-document.getElementById("productOverlay").addEventListener("click", function(event) {
-
-  if (event.target === this) {
-    closeProduct();
-  }
-
-});
-
-
-/* ==============================
-   ESC KEY TO CLOSE
-============================== */
-
-document.addEventListener("keydown", function(event) {
-
-  if (event.key === "Escape") {
-    closeProduct();
-  }
-
-});
