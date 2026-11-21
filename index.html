@@ -402,7 +402,7 @@ footer strong {
 
   <div class="products">
 
-    <article class="product" data-name="CHOCOLATE 1" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 1">
+    <article class="product" role="button" tabindex="0" aria-haspopup="dialog" data-name="CHOCOLATE 1" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 1">
       <div class="product-photo">CHOCOLATE 1</div>
       <div class="product-info">
         <h3>CHOCOLATE 1</h3>
@@ -412,7 +412,7 @@ footer strong {
       </div>
     </article>
 
-    <article class="product" data-name="CHOCOLATE 2" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 2">
+    <article class="product" role="button" tabindex="0" aria-haspopup="dialog" data-name="CHOCOLATE 2" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 2">
       <div class="product-photo">CHOCOLATE 2</div>
       <div class="product-info">
         <h3>CHOCOLATE 2</h3>
@@ -422,7 +422,7 @@ footer strong {
       </div>
     </article>
 
-    <article class="product" data-name="CHOCOLATE 3" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 3">
+    <article class="product" role="button" tabindex="0" aria-haspopup="dialog" data-name="CHOCOLATE 3" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 3">
       <div class="product-photo">CHOCOLATE 3</div>
       <div class="product-info">
         <h3>CHOCOLATE 3</h3>
@@ -432,7 +432,7 @@ footer strong {
       </div>
     </article>
 
-    <article class="product" data-name="CHOCOLATE 4" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 4">
+    <article class="product" role="button" tabindex="0" aria-haspopup="dialog" data-name="CHOCOLATE 4" data-price="12,00€" data-description="Información del producto. Añade aquí los detalles del producto." data-image="CHOCOLATE 4">
       <div class="product-photo">CHOCOLATE 4</div>
       <div class="product-info">
         <h3>CHOCOLATE 4</h3>
@@ -485,72 +485,126 @@ footer strong {
         BUY NOW
       </a>
 
-      <p class="instagram-hint">
-        (Se abrirá Instagram con un mensaje preparado para consultar tu pedido.)
+      <p class="gmail-hint" id="purchaseStatus" role="status" aria-live="polite">
+        Instagram se abrirá y el mensaje del producto se copiará para que puedas pegarlo en el chat.
       </p>
     </div>
   </div>
 </div>
 
 <script>
-// CONFIGURACIÓN: Hola, estoy interesado en comprar uno de sus artículos
-const SHOP_EMAIL = "https://www.instagram.com/Williamduch20/";
+// CONFIGURACIÓN
+const SHOP_INSTAGRAM_URL = "https://www.instagram.com/Williamduch20/";
 
 const modal = document.getElementById("productModal");
 const closeModal = document.getElementById("closeModal");
-
 const modalName = document.getElementById("modalName");
 const modalDescription = document.getElementById("modalDescription");
 const modalPrice = document.getElementById("modalPrice");
 const modalImage = document.getElementById("modalImage");
 const buyButton = document.getElementById("buyButton");
+const purchaseStatus = document.getElementById("purchaseStatus");
 
 let previousFocus = null;
+let currentMessage = "";
 
-// Abrir la ventana al pulsar un producto
+// Abrir el producto. También funciona con Enter y barra espaciadora.
+function openProduct(product) {
+  previousFocus = product;
+
+  const name = product.dataset.name || "Producto";
+  const price = product.dataset.price || "Consultar precio";
+  const description = product.dataset.description || "";
+  const image = product.dataset.image || name;
+
+  modalName.textContent = name;
+  modalDescription.textContent = description;
+  modalPrice.textContent = price;
+  modalImage.textContent = image;
+
+  currentMessage =
+    "¡Hola! Estoy interesado/a en comprar este producto de Williams SWEETSShop.\n\n" +
+    "Producto: " + name + "\n" +
+    "Precio: " + price + "\n\n" +
+    "¿Podrían indicarme cómo podemos quedar para realizar la compra? ¡Gracias!";
+
+  buyButton.href = SHOP_INSTAGRAM_URL;
+  purchaseStatus.textContent =
+    "Al pulsar BUY NOW se abrirá Instagram y se copiará el mensaje de " + name + ".";
+
+  modal.classList.add("active");
+  document.body.classList.add("modal-open");
+  closeModal.focus();
+}
+
 document.querySelectorAll(".product").forEach(product => {
-  product.addEventListener("click", () => {
-    previousFocus = document.activeElement;
+  product.addEventListener("click", () => openProduct(product));
 
-    const name = product.dataset.name;
-    const price = product.dataset.price;
-    const description = product.dataset.description;
-    const image = product.dataset.image;
-
-    modalName.textContent = name;
-    modalDescription.textContent = description;
-    modalPrice.textContent = price;
-    modalImage.textContent = image;
-
-    const subject = "Consulta sobre " + name;
-    const body =
-      "Hola, me gustaría saber sobre este producto:\n\n" +
-      "Producto: " + name + "\n" +
-      "Precio: " + price + "\n\n" +
-      "Donde puedo quedar para hacer la compra: ";
-
-    const gmailURL =
-      "https://www.instagram.com/Williamduch20/" +
-      "&to=" + encodeURIComponent(SHOP_EMAIL) +
-      "&su=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
-    buyButton.href = InstagramlURL;
-    buyButton.target = "_blank";
-    buyButton.rel = "noopener noreferrer";
-
-    modal.classList.add("active");
-    document.body.classList.add("modal-open");
-    closeModal.focus();
+  product.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openProduct(product);
+    }
   });
 });
 
+// No cancelamos el enlace: el navegador abre Instagram de forma nativa,
+// evitando que los bloqueadores de ventanas emergentes impidan la navegación.
+buyButton.addEventListener("click", () => {
+  if (!currentMessage) {
+    currentMessage = "¡Hola! Estoy interesado/a en sus productos de Williams SWEETSShop.";
+  }
+
+  purchaseStatus.textContent = "Abriendo Instagram y copiando el mensaje…";
+
+  // Iniciar la copia directamente durante el clic del usuario.
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(currentMessage)
+      .then(() => {
+        purchaseStatus.textContent =
+          "¡Mensaje copiado! En Instagram, abre el chat y pégalo para enviarlo.";
+      })
+      .catch(() => showManualCopyMessage());
+  } else {
+    // Alternativa para páginas servidas sin HTTPS o navegadores antiguos.
+    try {
+      const temporaryTextArea = document.createElement("textarea");
+      temporaryTextArea.value = currentMessage;
+      temporaryTextArea.setAttribute("readonly", "");
+      temporaryTextArea.style.position = "fixed";
+      temporaryTextArea.style.left = "-9999px";
+      temporaryTextArea.style.top = "0";
+      document.body.appendChild(temporaryTextArea);
+      temporaryTextArea.select();
+      temporaryTextArea.setSelectionRange(0, temporaryTextArea.value.length);
+      const copied = document.execCommand("copy");
+      temporaryTextArea.remove();
+
+      if (copied) {
+        purchaseStatus.textContent =
+          "¡Mensaje copiado! En Instagram, abre el chat y pégalo para enviarlo.";
+      } else {
+        showManualCopyMessage();
+      }
+    } catch (error) {
+      showManualCopyMessage();
+    }
+  }
+});
+
+function showManualCopyMessage() {
+  purchaseStatus.textContent =
+    "No se pudo copiar automáticamente. Copia este texto y pégalo en Instagram: " +
+    currentMessage;
+}
+
+// Cerrar ventana
 // Cerrar ventana
 function hideModal() {
   modal.classList.remove("active");
   document.body.classList.remove("modal-open");
 
-  if (previousFocus) previousFocus.focus();
+  if (previousFocus && document.contains(previousFocus)) previousFocus.focus();
 }
 
 closeModal.addEventListener("click", hideModal);
